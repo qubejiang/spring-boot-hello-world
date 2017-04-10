@@ -1,4 +1,4 @@
-id: ed5bca35-2976-4d79-81f6-7ab70b48fc0c
+id: d892e77a-353e-4168-990d-4308d98c5d8d
 name: testproj
 apptype: api
 language: java
@@ -9,7 +9,7 @@ opinion:
   id: 58e7da2820a29c000e93ba84
   name: Qubeship default opinion
 endpoint:
-  id: 58e4356c2f9f07000b226de8
+  id: 58ec17ed238503000bb2f6b1
   name: Qubeship Sandbox Cluster
   type: target
 pipeline: build_bake_test_deployment:v0.1
@@ -46,6 +46,6 @@ deployment:
   environments:
     prod:
       - type: qubeship_managed
-        id: 58e4356c2f9f07000b226de8
+        id: 58ec17ed238503000bb2f6b1
         template_id: qube_external_app_v1
         srcRepo: google
