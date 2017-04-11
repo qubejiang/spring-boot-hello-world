@@ -9,7 +9,7 @@ opinion:
   id: 58e7da2820a29c000e93ba84
   name: Qubeship default opinion
 endpoint:
-  id: 58ec17ed238503000bb2f6b1
+  id: 58ec20b899fd82000b7230e3
   name: Qubeship Sandbox Cluster
   type: target
 pipeline: build_bake_test_deployment:v0.1
