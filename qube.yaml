@@ -1,51 +1,32 @@
-id: 'd892e77a-353e-4168-990d-4308d98c5d8d'
-name: 'new3_name_test'
-apptype: 'api'
-language: 'java'
+id: 5ce4e9f1-bbdb-49fa-a513-7350a4ac3ff5
+version: v2
+name: spring.boot.hello.world
+apptype: api
+language: java
+containerName: springboothelloworld
 toolchain:
-  id: '58e7da24acac5a0020e2b93e'
-  name: 'Qubeship-Java-Toolchain'
+  id: 58e7da24acac5a0020e2b93e
+  name: Qubeship-Java-Toolchain
 opinion:
-  id: '58e7da2820a29c000e93ba84'
-  name: 'Qubeship default opinion'
+  id: 58e7da2820a29c000e93ba84
+  name: Qubeship default opinion
 endpoint:
-  id: '58ec17ed238503000bb2f6b1'
-  name: 'Default Endpoint'
-  type: 'target'
-pipeline: 'build_bake_test_deployment:v0.1'
-security:
-  keys_loc: 'conf/'
-notification:
-  type: 'slack'
-  domain: ''
-  channel: 'qubeship'
+  id: 58ec20b899fd82000b7230e3
+  name: Qubeship Sandbox Cluster
+  type: target
+variables:
+  - name: APP_VERSION
+    value: v0.1
 build:
-  skip: false
-  image:
-    name: maven:3.3-jdk-8-onbuild
-    onbuild:
-    - mvn package
-  publish_artifact: target/
-  lint: true
+  compile:
+    publish:
+     - target/
 bake:
   skip: false
-  strategy: docker
-  script: Dockerfile
-  repositories:
-  - name: google
-    prefix: gcr.io/qubeship-partners
-    type: gcr
 test:
   skip: true
-  functional:
-    provider: qubeship-sg
-deployment:
+deploy_to_qa:
+  skip: true
+deploy_to_prod:
   skip: false
-  continuous_deployment: true
-  service_name: tst
-  environments:
-    prod:
-    - type: qubeship_managed
-      id: 58ec20b899fd82000b7230e3
-      template_id: qube_external_app_v1
-      srcRepo: google
+
