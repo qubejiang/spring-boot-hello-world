@@ -1,26 +1,26 @@
-id: fd19fc0d-92fd-4e68-ab55-9d071f42cd02
-version: v2
-name: spring.boot.hello.world
-apptype: api
-language: java
-containerName: springboothelloworld
+id: 'fd19fc0d-92fd-4e68-ab55-9d071f42cd02'
+version: 'v2'
+name: 'testbuild'
+apptype: 'api'
+language: 'java'
+containerName: 'springboothelloworld'
 toolchain:
-  id: 58e7da24acac5a0020e2b93e
-  name: Qubeship-Java-Toolchain
+  id: '58e7da24acac5a0020e2b93e'
+  name: 'Qubeship-Java-Toolchain'
 opinion:
-  id: 58e7da2820a29c000e93ba84
-  name: Qubeship default opinion
+  id: '58e7da2820a29c000e93ba84'
+  name: 'Qubeship default opinion'
 endpoint:
-  id: 58ec20b899fd82000b7230e3
-  name: Qubeship Sandbox Cluster
-  type: target
+  id: '58ec20b899fd82000b7230e3'
+  name: 'Qubeship Sandbox Cluster'
+  type: 'target'
 variables:
-  - name: APP_VERSION
-    value: v0.1
+- name: 'APP_VERSION'
+  value: 'v0.1'
 build:
   compile:
     publish:
-     - target/
+    - target/
 bake:
   skip: false
 test:
@@ -29,4 +29,3 @@ deploy_to_qa:
   skip: true
 deploy_to_prod:
   skip: false
-
